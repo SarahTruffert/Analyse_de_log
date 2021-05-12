@@ -50,6 +50,9 @@ def matiere(path):
 
 
 def matiere_et_minutes(path):
+  """
+      Réunit la matière avec ses minutes :
+  """
 
     liste_matieres = matiere(path)
     liste_minutes = minutes(path)
