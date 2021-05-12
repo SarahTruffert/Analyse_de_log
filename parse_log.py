@@ -29,7 +29,7 @@ def minutes(path):
             var = (i[0:11]).split("-")
             date = datetime.strptime(var[1], "%H:%M")
             date2 = datetime.strptime(var[0], "%H:%M")
-            liste_minutes.append(((date-date2).seconds)//60)
+            liste_minutes.append(str(((date-date2).seconds)//60))
     return liste_minutes
 #print(minutes('planning.log'))
 
@@ -42,11 +42,22 @@ def matiere(path):
     lines = open_file(path)
     for i in lines :
         if len(i) != 0 :
-            var_matiere = (i[11:24])
-            liste_matieres.append(var_matiere)
+            var_matiere = ((i[11:24]))
+            liste_matieres.append(var_matiere + " ")
     return liste_matieres
 
 #print(matiere('planning.log'))
+
+
+def matiere_et_minutes(path):
+
+    liste_matieres = matiere(path)
+    liste_minutes = minutes(path)
+    res = [i + j for i, j in zip (liste_matieres, liste_minutes)]
+    print(res)
+
+#matiere_et_minutes('planning.log')  
+
 
 def percentage(temps_total_activite,tout_total,temps_total_formation):
     """
