@@ -50,9 +50,6 @@ def matiere(path):
 
 
 def matiere_et_minutes(path):
-  """
-      Réunit la matière avec ses minutes :
-  """
 
     liste_matieres = matiere(path)
     liste_minutes = minutes(path)
@@ -62,7 +59,7 @@ def matiere_et_minutes(path):
 #matiere_et_minutes('planning.log')  
 
 
-def percentage(temps_total_activite,tout_total,temps_total_formation):
+def percentage(path):
     """
         Calcule les minutes en % :
     """
@@ -70,9 +67,12 @@ def percentage(temps_total_activite,tout_total,temps_total_formation):
     # tout_total = 100
     # temps_total_activite = 65 
     # temps_total_formation = 970
-    percentage = (temps_total_activite * tout_total) / temps_total_formation
-    logging.info('Calcule le pourcentage')
-    return percentage
+    # percentage = (temps_total_activite * tout_total) / temps_total_formation
+    # logging.info('Calcule le pourcentage')
+    # return percentage
+
+
+print(percentage('planning.log'))
 
 
 
